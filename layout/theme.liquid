@@ -27,10 +27,13 @@
   </head>
 
   <body>
+    {% comment %} header will be here {% endcomment %}
     {% sections 'header-group' %}
 
+    {% comment %} here will be body {% endcomment %}
     {{ content_for_layout }}
 
+    {% comment %} footer will be here {% endcomment %}
     {% sections 'footer-group' %}
   </body>
 </html>
