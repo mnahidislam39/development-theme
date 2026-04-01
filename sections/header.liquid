@@ -1,4 +1,17 @@
 <header>
+  <h1>
+    {{ shop.name }}
+    <br>
+    {{ product.price }}
+    {{ collection.title }}
+    <br>
+    {% if cart.item_count > 0 %}
+      Item in Cart = {{ cart.item_count }}
+    {% else %}
+      <p>No items in cart</p>
+    {% endif %}
+  </h1>
+
   <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">Navbar</a>
@@ -21,7 +34,13 @@
             </li>
           {% endfor %}
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
               Dropdown
             </a>
             <ul class="dropdown-menu">
@@ -32,6 +51,12 @@
             </ul>
           </li>
         </ul>
+
+        {% comment %} all products in the collection {% endcomment %}
+        {% for item in collection.products %}
+          <p>{{ item.title }}</p>
+        {% endfor %}
+
         <form class="d-flex" role="search">
           <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
           <button class="btn btn-outline-success" type="submit">Search</button>

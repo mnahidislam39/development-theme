@@ -13,22 +13,20 @@
   "sections": {
     "announcement": {
       "type": "announcement-bar",
-      "settings": {
-        "background_color": "#000000",
-        "text_color": "#ffffff",
-        "message": "Welcome to Nahid's Development Store!"
-      }
+      "settings": {}
     },
     "header": {
       "type": "header",
-      "settings": {
-        "menu": "main-menu",
-        "customer_account_menu": "customer-account-main-menu"
-      }
+      "settings": {}
+    },
+    "custom": {
+      "type": "custom-section",
+      "settings": {}
     }
   },
   "order": [
     "announcement",
-    "header"
+    "header",
+    "custom"
   ]
 }
