@@ -1,0 +1,23 @@
+{% assign product = all_products[section.settings.product] %}
+
+{% if product %}
+  <h2>{{ product.title }}</h2>
+  <img src="{{ product.featured_image | image_url }}" width="300" height="300" alt="{{ product.title }}">
+
+  {% form 'product', product %}
+    <button type="submit">Add to cart</button>
+  {% endform %}
+{% endif %}
+
+{% schema %}
+{
+  "name": "Featured Product",
+  "settings": [
+    {
+      "type": "text",
+      "id": "product",
+      "label": "Product Handle"
+    }
+  ]
+}
+{% endschema %}

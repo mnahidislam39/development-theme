@@ -13,13 +13,15 @@
       "type": "portfolio-template",
       "settings": {},
     },
-    "product": {
-      "type": "product",
-      "settings": {}
+    "featured-product": {
+      "type": "featured-product",
+      "settings": {
+        "product": "5575-maleta-de-cordura-sobre-deposito-de-moto-con-iman"
+      }
     }
   },
   "order": [
-    "main",
-    "product"
+    "featured-product",
+    "main"
   ],
 }
