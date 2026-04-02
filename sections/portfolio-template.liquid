@@ -1,3 +1,13 @@
+{% assign users = 'Alice,Bob,Charlie,david abid,Eve' | split: ',' %}
+
+<h3>All users are:</h3>
+{% for user in users %}
+  <p>
+    {{ user }}
+    is
+  </p>
+{% endfor %}
+
 <a
   href="https://mnahidislam39.github.io/portfolio"
   target="_blank"
