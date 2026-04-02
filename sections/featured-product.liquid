@@ -1,24 +1,31 @@
-{% comment %} all products {% endcomment %}
+<h2>All Products:</h2>
 
-{% for product in collection.all.product %}
-  <div class="product-card">
-    <h3>{{ product.title }}</h3>
-    <img src="{{ product.featured_image | image_url }}" width="200" height="200" alt="{{ product.title }}">
-    <p>{{ product.price | money }}</p>
-
-    <a href="{{ product.url }}">View Product</a>
-  </div>
-{% endfor %}
+<div class="grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:20px;">
+  {% for product in collections.all.products %}
+    <div
+      class="product-card"
+      style="border:1px solid #ccc;padding:10px; height:350px; display:flex; justify-content:center; flex-direction:column; align-items:center; overflow:hidden; border-radius:8px;"
+    >
+      <div
+        style="width:200px; height:200px; display:flex;  overflow:hidden; object-fit:fill;"
+      >
+        <img src="{{ product.featured_image | image_url }}" width="auto" height="auto" alt="{{ product.title }}">
+      </div>
+      <h6>{{ product.title }}</h6>
+      <p>{{ product.description | strip_html | truncate: 80 }}</p>
+      <p>{{ product.price | money }}</p>
+      <a
+        href="{{ product.url }}"
+        style="margin-top:auto; text-decoration:none; background-color:#007bff; color:white; padding:10px; text-align:center; border-radius:4px; width:fit-content; align-self:center;"
+        >View Product</a
+      >
+    </div>
+  {% endfor %}
+</div>
 
 {% schema %}
 {
-  "name": "Featured Product",
-  "settings": [
-    {
-      "type": "text",
-      "id": "product",
-      "label": "Product Handle"
-    }
-  ]
+  "name": "All Products",
+  "settings": []
 }
 {% endschema %}
