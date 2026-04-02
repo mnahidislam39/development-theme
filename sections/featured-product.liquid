@@ -1,6 +1,6 @@
 {% assign product = all_products[section.settings.product] %}
 
-{% if product.tags == "bag"%}
+{% if product.tags == "bag" %}
   <h2>{{ product.title }}</h2>
   <img src="{{ product.featured_image | image_url }}" width="300" height="300" alt="{{ product.title }}">
 
