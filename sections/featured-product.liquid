@@ -1,6 +1,6 @@
 {% assign product = all_products[section.settings.product] %}
 
-{% if product.type == "Motorcycle Gear" %}
+{% if product.tags contains "MALETA DE CORDURA SOBRE DEPOSITO DE MOTO CON IMÁN" %}
   <h2>{{ product.title }}</h2>
   <img src="{{ product.featured_image | image_url }}" width="300" height="300" alt="{{ product.title }}">
 
